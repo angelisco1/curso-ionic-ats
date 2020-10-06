@@ -1,0 +1,42 @@
+<h2>Directivas</h2>
+
+<h3>De atributo</h3>
+<p [ngClass]="{ letraVerde: formValido }">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsum sit reiciendis quis, rerum est quibusdam totam aliquam? Tempora, maiores reprehenderit? Dolores a officia numquam modi molestias omnis labore eius!</p>
+
+<p [ngStyle]="{ color: colorNaranja }">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ipsum sit reiciendis quis, rerum est quibusdam totam aliquam? Tempora, maiores reprehenderit? Dolores a officia numquam modi molestias omnis labore eius!</p>
+
+<input type="text" [(ngModel)]="colorNaranja">
+
+
+<!-- <p [appMarcar]="{ color: colorNaranja, msg: 'Un mensaje' }">Pasa el ratón por encima</p> -->
+<p [appMarcar]="colorNaranja">Pasa el ratón por encima</p>
+
+
+<h3>Estructurales</h3>
+
+<p *ngIf="formValido">El formulario es válido</p>
+<!-- <p *ngIf="!formValido">El formulario tiene errores...</p> -->
+
+<p *ngIf="formValido; else parteElse">El formulario es válido</p>
+<ng-template #parteElse>
+  <p>El formulario tiene errores...</p>
+</ng-template>
+
+<div *ngIf="formValido; then pIf else pElse"></div>
+<ng-template #pIf>
+  <p>El formulario es válido!!!</p>
+</ng-template>
+<ng-template #pElse>
+  <p>El formulario tiene errores!!!</p>
+</ng-template>
+
+<ul>
+  <li *ngFor="let mascota of mascotas; let i = index">{{i}}: {{ mascota }}</li>
+</ul>
+
+<div [ngSwitch]="colorNaranja">
+  <p *ngSwitchCase="'orange'">Naranja</p>
+  <p *ngSwitchCase="'yellow'">Limón</p>
+  <p *ngSwitchCase="'red'">Fresa</p>
+  <p *ngSwitchDefault>Otro</p>
+</div>

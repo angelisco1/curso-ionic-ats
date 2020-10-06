@@ -1,0 +1,26 @@
+<h2>Data Binding</h2>
+
+<h3>String Interpolation</h3>
+<p>Me llamo {{nombre}}</p>
+
+<h3>Property Binding</h3>
+<input type="text" [placeholder]="nombre">
+<!-- No mezclar el Property Binding y el String Interpolation -->
+<!-- <input type="text" placeholder="{{nombre}}"> -->
+
+<h3>Event Binding</h3>
+<button type="button" (click)="mostrarMensaje('Hola mundo!!!')">Alerta!!!</button>
+<button type="button" (click)="cambiarNombre()">Cambiar nombre</button>
+
+<h3>Two-Way Data Binding</h3>
+<input type="text" [(ngModel)]="nombre">
+
+<input type="text" [value]="nombre" (input)="nombre = $event.target.value">
+
+<input type="number" [value]="edad">
+
+<h3>Input y Output</h3>
+
+<app-cmp-hijo [nombreArriba]="nombre" (recibirNombre)="nombreHijo = $event"></app-cmp-hijo>
+
+<p>Mi hijo se llama: {{nombreHijo}}</p>

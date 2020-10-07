@@ -9,6 +9,16 @@ import { CmpHijoComponent } from './data-binding/cmp-hijo/cmp-hijo.component';
 import { DirectivasComponent } from './directivas/directivas.component';
 import { MarcarDirective } from './directivas/marcar.directive';
 import { ServiciosComponent } from './servicios/servicios.component';
+import { CmpAComponent } from './servicios/cmp-a/cmp-a.component';
+import { CmpBComponent } from './servicios/cmp-b/cmp-b.component';
+import { DatosService } from './servicios/datos.service';
+import { FechaLogService, LogService } from './servicios/log.service';
+import { HttpComponent } from './http/http.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ObservableComponent } from './http/observable/observable.component';
+import { FormOfertaComponent } from './http/form-oferta/form-oferta.component';
+import { OfertaComponent } from './http/oferta/oferta.component';
+import { AuthInterceptorService } from './http/auth-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -18,13 +28,23 @@ import { ServiciosComponent } from './servicios/servicios.component';
     CmpHijoComponent,
     DirectivasComponent,
     MarcarDirective,
-    ServiciosComponent
+    ServiciosComponent,
+    CmpAComponent,
+    CmpBComponent,
+    HttpComponent,
+    ObservableComponent,
+    FormOfertaComponent,
+    OfertaComponent,
   ],
   imports: [
-    BrowserModule,
+  BrowserModule,
     FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    // DatosService
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

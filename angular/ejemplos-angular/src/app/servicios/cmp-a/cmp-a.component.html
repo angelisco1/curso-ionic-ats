@@ -1,0 +1,9 @@
+<h3>Cmp A</h3>
+
+<input type="text" #inputA>
+<button type="button" (click)="add(inputA.value)">Añadir</button>
+<button type="button" (click)="send(inputA.value)">Enviar al componente B</button>
+
+<ul>
+  <li *ngFor="let dato of datos">{{dato}}</li>
+</ul>

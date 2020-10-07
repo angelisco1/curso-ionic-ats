@@ -11,3 +11,13 @@ export class LogService {
     console.log('Msg: ' + msg)
   }
 }
+
+
+export class FechaLogService {
+  constructor() { }
+
+  mostrarMensaje(msg: string) {
+    const fecha = new Date().toLocaleDateString();
+    console.log(`[${fecha}] Msg: ${msg}`)
+  }
+}

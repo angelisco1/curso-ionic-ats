@@ -1,0 +1,18 @@
+<h2>Observables y Peticiones Http</h2>
+
+<app-observable *ngIf="mostrarObservables"></app-observable>
+
+<button type="button" (click)="mostrarObservables = !mostrarObservables">Toggle observables</button>
+
+<app-form-oferta></app-form-oferta>
+
+<div>
+  <app-oferta
+    *ngFor="let oferta of ofertas"
+    [oferta]="oferta"
+  ></app-oferta>
+</div>
+
+<pre>
+  {{ofertas[0] | json}}
+</pre>

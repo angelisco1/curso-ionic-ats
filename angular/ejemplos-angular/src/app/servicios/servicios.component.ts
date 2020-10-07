@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LogService } from './log.service';
 
 @Component({
   selector: 'app-servicios',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServiciosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private logService: LogService) { }
 
   ngOnInit(): void {
+  }
+
+  enviarMsg(nombre: string) {
+    // LLamar al servicio
+    this.logService.mostrarMensaje(nombre);
   }
 
 }

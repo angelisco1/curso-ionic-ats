@@ -1,0 +1,18 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{ folder }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-button (click)="abrirMenu()">
+    Abrir menu
+  </ion-button>
+  <ion-button (click)="t.present()">
+    Mostrar toast
+  </ion-button>
+  <ion-toast #t message="Un mensaje" color="success" duration="2000"></ion-toast>
+</ion-content>

@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Información de {{usuario.nombre}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <pre>{{usuario | json}}</pre>
+  <!-- <ion-button
+    type="button"
+    expand="block"
+    color="primary"
+    [routerLink]="['/nuevo-usuario']"
+  >Crear usuario</ion-button> -->
+</ion-content>

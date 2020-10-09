@@ -35,4 +35,38 @@
     [routerLink]="['/nuevo-usuario']"
   >Crear usuario</ion-button>
 
+
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Usuarios creados</ion-label>
+    </ion-list-header>
+
+    <ion-item-sliding *ngFor="let usuario of listaUsuarios">
+      <ion-item>
+        <ion-label>{{usuario.nombre}}</ion-label>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option color="danger">
+          <ion-button color="dark" fill="outline" (click)="eliminar(usuario.id)">
+            <ion-icon name="trash-outline"></ion-icon>
+          </ion-button>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-button
+    type="button"
+    expand="block"
+    color="terciary"
+    (click)="login()"
+  >Login/Logout</ion-button>
+
+  <ion-button
+    type="button"
+    expand="block"
+    color="secondary"
+    [routerLink]="['/ubicaciones']"
+  >Ubicaciones</ion-button>
+
 </ion-content>
